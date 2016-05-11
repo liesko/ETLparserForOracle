@@ -1,0 +1,13 @@
+c:\users\a616758\documents\visual studio 2015\Projects\OracleConnectETLParser1\OracleConnectETLParser1\bin\Debug\OracleConnectETLParser1.exe.config
+c:\users\a616758\documents\visual studio 2015\Projects\OracleConnectETLParser1\OracleConnectETLParser1\bin\Debug\OracleConnectETLParser1.exe
+c:\users\a616758\documents\visual studio 2015\Projects\OracleConnectETLParser1\OracleConnectETLParser1\bin\Debug\OracleConnectETLParser1.pdb
+c:\users\a616758\documents\visual studio 2015\Projects\OracleConnectETLParser1\OracleConnectETLParser1\obj\Debug\OracleConnectETLParser1.csprojResolveAssemblyReference.cache
+c:\users\a616758\documents\visual studio 2015\Projects\OracleConnectETLParser1\OracleConnectETLParser1\obj\Debug\OracleConnectETLParser1.Properties.Resources.resources
+c:\users\a616758\documents\visual studio 2015\Projects\OracleConnectETLParser1\OracleConnectETLParser1\obj\Debug\OracleConnectETLParser1.csproj.GenerateResource.Cache
+c:\users\a616758\documents\visual studio 2015\Projects\OracleConnectETLParser1\OracleConnectETLParser1\obj\Debug\OracleConnectETLParser1.exe
+c:\users\a616758\documents\visual studio 2015\Projects\OracleConnectETLParser1\OracleConnectETLParser1\obj\Debug\OracleConnectETLParser1.pdb
+C:\Users\A616758\documents\visual studio 2015\Projects\OracleConnectETLParser1\OracleConnectETLParser1\bin\Debug\Oracle.ManagedDataAccess.dll
+C:\Users\A616758\documents\visual studio 2015\Projects\OracleConnectETLParser1\OracleConnectETLParser1\obj\Debug\OracleConnectETLParser1.Form1.resources
+C:\Users\A616758\Documents\GitHub\ETLparserForOracle\OracleConnectETLParser1\bin\Debug\OracleConnectETLParser1.exe.config
+C:\Users\A616758\Documents\GitHub\ETLparserForOracle\OracleConnectETLParser1\obj\Debug\OracleConnectETLParser1.exe
+C:\Users\A616758\Documents\GitHub\ETLparserForOracle\OracleConnectETLParser1\obj\Debug\OracleConnectETLParser1.pdb
