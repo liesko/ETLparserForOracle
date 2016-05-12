@@ -11,3 +11,10 @@ C:\Users\A616758\documents\visual studio 2015\Projects\OracleConnectETLParser1\O
 C:\Users\A616758\Documents\GitHub\ETLparserForOracle\OracleConnectETLParser1\bin\Debug\OracleConnectETLParser1.exe.config
 C:\Users\A616758\Documents\GitHub\ETLparserForOracle\OracleConnectETLParser1\obj\Debug\OracleConnectETLParser1.exe
 C:\Users\A616758\Documents\GitHub\ETLparserForOracle\OracleConnectETLParser1\obj\Debug\OracleConnectETLParser1.pdb
+C:\Users\A616758\Documents\GitHub\ETLparserForOracle\OracleConnectETLParser1\bin\Debug\OracleConnectETLParser1.exe
+C:\Users\A616758\Documents\GitHub\ETLparserForOracle\OracleConnectETLParser1\bin\Debug\OracleConnectETLParser1.pdb
+C:\Users\A616758\Documents\GitHub\ETLparserForOracle\OracleConnectETLParser1\bin\Debug\Oracle.ManagedDataAccess.dll
+C:\Users\A616758\Documents\GitHub\ETLparserForOracle\OracleConnectETLParser1\obj\Debug\OracleConnectETLParser1.csprojResolveAssemblyReference.cache
+C:\Users\A616758\Documents\GitHub\ETLparserForOracle\OracleConnectETLParser1\obj\Debug\OracleConnectETLParser1.Form1.resources
+C:\Users\A616758\Documents\GitHub\ETLparserForOracle\OracleConnectETLParser1\obj\Debug\OracleConnectETLParser1.Properties.Resources.resources
+C:\Users\A616758\Documents\GitHub\ETLparserForOracle\OracleConnectETLParser1\obj\Debug\OracleConnectETLParser1.csproj.GenerateResource.Cache

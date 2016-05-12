@@ -60,8 +60,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DB_Object.cs" />
     <Compile Include="db_operation\Db_connector.cs" />
-    <Compile Include="db_operation\Selecter.cs" />
+    <Compile Include="db_operation\Manager.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

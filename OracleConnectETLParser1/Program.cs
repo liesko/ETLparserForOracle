@@ -21,10 +21,10 @@ namespace OracleConnectETLParser1
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
            // Application.Run(new Form1());
-            Console.WriteLine("xxxxxxxxxxxxxxxxxxxxxxxxxx");
-            Selecter.print_TableNameList();
+            Console.WriteLine("xxxxxxxxxxxxxxxxxxxxxxxxxx");           
+            Manager test=new Manager();
+            test.createDB_Objects();
             Console.ReadKey();
-            //oraCmd.Connection = databaza;
         }
     }
 }

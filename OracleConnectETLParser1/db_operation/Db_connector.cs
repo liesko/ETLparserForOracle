@@ -20,7 +20,7 @@ namespace OracleConnectETLParser1.db_operation
 {
     public class Db_connector
     {
-        public OracleConnection oraConnection = new OracleConnection(@"");
+        public OracleConnection oraConnection = new OracleConnection(@"Data Source=localhost:1521/xe; User ID=liesko; Password=");
         public void Open()
         {
             if (oraConnection.State != ConnectionState.Open)
