@@ -21,6 +21,8 @@ namespace OracleConnectETLParser1.db_operation
     public class Db_connector
     {
         public OracleConnection oraConnection = new OracleConnection(@"Data Source=localhost:1521/xe; User ID=liesko; Password=");
+        public string DB_owner = "LIESKO";
+
         public void Open()
         {
             if (oraConnection.State != ConnectionState.Open)
