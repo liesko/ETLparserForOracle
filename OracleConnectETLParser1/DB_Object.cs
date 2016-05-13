@@ -11,7 +11,11 @@ namespace OracleConnectETLParser1
         public List<string> referencedObject;   // referenced objects
         public List<string> columns;            // list of columns will be created only for tables and views
         public int tableLevel;                  // level in ETL hierarchy (1-base level, -1-undefined level, other levels: 2,3,4)              
-        public DB_Object(string name, string type)  // Constructor
+        
+         /*
+         * Constructor
+         */
+        public DB_Object(string name, string type)  
         {
             this.name = name;
             this.type = type;
