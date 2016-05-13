@@ -12,13 +12,14 @@ namespace OracleConnectETLParser1.db_operation
 {
     public class Manager
     {
-        public List<DB_Object> ListOfObjects;
+        public List<DbObject> ListOfObjects;                   // MAIN list of DbObjects
+        public List<DbObject> RelateDbObjects;                 // list of related objects - this list is filled by listOfRelatedObjects method
         public void print_TableNameList()
         {
-            Db_connector databaza = new Db_connector();
+            DbConnector databaza = new DbConnector();
             databaza.Open();
             OracleCommand oraCmd = new OracleCommand();
-            oraCmd.Connection = databaza.oraConnection;
+            oraCmd.Connection = databaza.OraConnection;
             oraCmd.CommandText = "select table_name, 'xxx' from tabs";
             OracleDataReader dr = oraCmd.ExecuteReader();
             while (dr.Read())
@@ -33,60 +34,72 @@ namespace OracleConnectETLParser1.db_operation
          */
         public void createDB_Objects()
         {
-            Db_connector databaza = new Db_connector();
-            databaza.Open();
+            DbConnector db = new DbConnector();
+            db.Open();
             OracleCommand oraCmd = new OracleCommand();
-            oraCmd.Connection = databaza.oraConnection;
-            oraCmd.CommandText = "select object_name, object_type from ALL_OBJECTS WHERE Owner ='"+databaza.DB_owner+"'";
+            oraCmd.Connection = db.OraConnection;
+            oraCmd.CommandText = "select object_name, object_type from ALL_OBJECTS WHERE Owner ='"+db.DbOwner+"'";
             OracleDataReader dr = oraCmd.ExecuteReader();
-            this.ListOfObjects = new List<DB_Object>();
+            this.ListOfObjects = new List<DbObject>();
             while (dr.Read())
             {
-                ListOfObjects.Add(new DB_Object(dr.GetString(0), dr.GetString(1)));
+                ListOfObjects.Add(new DbObject(dr.GetString(0), dr.GetString(1)));
             }
-            setNextLevel(2);
-            setNextLevel(3);
-            databaza.Close();
+            // some cycle will be necessary here - later
+            SetNextLevel(2);
+            SetNextLevel(3);
+            // - END cycle
+            db.Close();
         }
-        private void setNextLevel(int newLevel)                         // setting of others levels
+        /*
+         * Quite complicated method for DbObjects level setting.
+         */
+        private void SetNextLevel(int newLevel)                        
         {
-            for (int i = 0; i < ListOfObjects.Count; i++)               // all objects
+            for (int i = 0; i < ListOfObjects.Count; i++)                                   // all objects
             {
-                if (ListOfObjects[i].tableLevel==-1)                    // except level!=-1
+                if (ListOfObjects[i].TableLevel==-1)                                        // ==-1 (only unleveled DbObjects expected)
                 {
-                    for (int j = 0; j < ListOfObjects[i].referencedObject.Count; j++)
+                    for (int j = 0; j < ListOfObjects[i].ReferencedObject.Count; j++)       // reference objects for previous object
                     {
-                    if (getDbObjectLevel(ListOfObjects[i].referencedObject[j])<newLevel)
+                    if (GetDbObjectLevel(ListOfObjects[i].ReferencedObject[j])<newLevel)    // checking if referenced object had less level than main object
                         {
-                            ListOfObjects[i].tableLevel = newLevel;
+                            ListOfObjects[i].TableLevel = newLevel;
                         }
                     else
                         {
-                            ListOfObjects[i].tableLevel = -1;
+                            ListOfObjects[i].TableLevel = -1;
                         }
                     }
                 }
             }
         }
 
-        private int getDbObjectLevel(string pname)                  // when I need return DB_object.level matched by pname
+        /*
+         * Get of DBObject level.
+         * return: int - level
+         * param: pname - DbObjectName
+         */
+        private int GetDbObjectLevel(string pname)                  // when I need return DB_object.level matched by pname
         {
            //DB_Object someoDbObject= new DB_Object();
             for (int i = 0; i < ListOfObjects.Count; i++)
             {
-                if (ListOfObjects[i].name==pname)
+                if (ListOfObjects[i].Name==pname)
                 {
-                    return ListOfObjects[i].tableLevel;
+                    return ListOfObjects[i].TableLevel;
                 }
             }
             return 999;
         }
-        
-         /*
-          * Method will return list of all related objects for selected Object in param
-          * - it should return List<Db_Object>...
-         */
-        private void listOfRelatedObjects(string objectName)                           
+
+        /*
+         * Method will return list of all related objects for selected Object in param
+         * - it should return List<Db_Object>...
+         * - should it be some kind of recursive algorithm???
+        */
+        //private List<DB_Object> listOfRelatedObjects(string objectName)                           
+        private void ListOfRelatedObjects(string objectName)                           
         {
             // code here
         }

@@ -55,6 +55,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Column.cs" />
     <Compile Include="DataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
