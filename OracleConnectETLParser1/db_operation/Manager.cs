@@ -60,9 +60,9 @@ namespace OracleConnectETLParser1.db_operation
             {
                 if (ListOfObjects[i].TableLevel==-1)                                        // ==-1 (only unleveled DbObjects expected)
                 {
-                    for (int j = 0; j < ListOfObjects[i].ReferencedObject.Count; j++)       // reference objects for previous object
+                    for (int j = 0; j < ListOfObjects[i].ReferencedObjectNames.Count; j++)       // reference objects for previous object
                     {
-                    if (GetDbObjectLevel(ListOfObjects[i].ReferencedObject[j])<newLevel)    // checking if referenced object had less level than main object
+                    if (GetDbObjectLevel(ListOfObjects[i].ReferencedObjectNames[j])<newLevel)    // checking if referenced object had less level than main object
                         {
                             ListOfObjects[i].TableLevel = newLevel;
                         }
@@ -99,9 +99,10 @@ namespace OracleConnectETLParser1.db_operation
          * - should it be some kind of recursive algorithm???
         */
         //private List<DB_Object> listOfRelatedObjects(string objectName)                           
-        private void ListOfRelatedObjects(string objectName)                           
+        private void setListOfRelatedObjects(string objectName)                           
         {
             // code here
+            //
         }
     }
 }

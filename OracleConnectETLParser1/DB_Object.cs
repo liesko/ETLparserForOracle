@@ -9,7 +9,8 @@ namespace OracleConnectETLParser1
     {
         public string Name;                     // table name
         public string Type;                     // type of object e.g. PROCEDURE, TABLE, VIEW, TRIGGER, etc.
-        public List<string> ReferencedObject;   // referenced objects
+        public List<string> ReferencedObjectNames;   // referenced objects - only names
+        public List<DbObject> ReferencedDbObjects { get; private set; } // container with referenced objects
         public List<Column> ColumnsList;        // list of columns will be created only for tables and views, previous list will be deprecated
         public int TableLevel;                  // level in ETL hierarchy (1-base level, -1-undefined level, other levels: 2,3,4)    
         public int Cardinality;                 // cardinality value for tables and views          
@@ -21,7 +22,7 @@ namespace OracleConnectETLParser1
         {
             this.Name = name;
             this.Type = type;
-            this.ReferencedObject= new List<string>();
+            this.ReferencedObjectNames= new List<string>();
             this.ColumnsList=new List<Column>();
             if (this.Type== "TABLE" || this.Type == "VIEW" || this.Type == "MATERIALIZED VIEW")
             {
@@ -32,7 +33,7 @@ namespace OracleConnectETLParser1
             SetBaseLevel(this.Name);            // this method set only tableLevel=1 for base tables, for other tables tableLevel=-1
             if (this.TableLevel==-1)
             {
-                ReferencedObject=SetReferenceObjects(this.Name);
+                ReferencedObjectNames=SetReferenceObjects(this.Name);
             }
         }
         /*
