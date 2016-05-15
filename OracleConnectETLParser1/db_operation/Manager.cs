@@ -49,6 +49,7 @@ namespace OracleConnectETLParser1.db_operation
             SetNextLevel(2);
             SetNextLevel(3);
             // - END cycle
+            setListOfRelatedObjects();
             db.Close();
         }
         /*
@@ -92,17 +93,39 @@ namespace OracleConnectETLParser1.db_operation
             }
             return 999;
         }
+        /*
+         * Method return DbObject from List<> ListOfObjects based on pname - name ob object
+         */
+        private DbObject GetDbObjectFromListOfObjects(string pname)
+        {
+            for (int i = 0; i < ListOfObjects.Count; i++)
+            {
+                if (ListOfObjects[i].Name == pname)
+                {
+                    return ListOfObjects[i];
+                }
+            }
+            return null;
+        }
 
         /*
-         * Method will return list of all related objects for selected Object in param
-         * - it should return List<Db_Object>...
-         * - should it be some kind of recursive algorithm???
+         * Method will set list of all related objects for selected Object in param
+         * - this methot should rewrite atribute in object from DB_object class
         */
-        //private List<DB_Object> listOfRelatedObjects(string objectName)                           
-        private void setListOfRelatedObjects(string objectName)                           
+
+        private void setListOfRelatedObjects()                           
         {
-            // code here
-            //
+            // prejdem vsetky objekty v liste X - main list
+            // pre vsetky objekty mena listu X.related urob
+            // do X.ReferencedDbObjects=GetDbObjectFromListOfObjects(x.related[actual])
+            for (int i = 0; i < ListOfObjects.Count; i++)
+            {
+                for (int j = 0; j < ListOfObjects[i].ReferencedObjectNames.Count; j++)
+                {
+                    ListOfObjects[i].ReferencedDbObjects.Add(GetDbObjectFromListOfObjects(ListOfObjects[i].ReferencedObjectNames[j]));
+                }
+            }
         }
+
     }
 }
