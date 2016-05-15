@@ -8,9 +8,9 @@
 
         public Column(string colName, string dataType, bool nullable)
         {
-            this.ColumnName = colName;
-            this.DataType = dataType;
-            this.IsNullable = nullable;
+            ColumnName = colName;
+            DataType = dataType;
+            IsNullable = nullable;
         }
     }
 }

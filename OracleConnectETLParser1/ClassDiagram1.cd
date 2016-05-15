@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="OracleConnectETLParser1.Column" Collapsed="true">
+    <Position X="19.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAABAAAAAAAAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Column.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OracleConnectETLParser1.DataSet1" Collapsed="true">
+    <Position X="21.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ANCBAECEUyiCQBNOJIgAQBYAEQgCSTgARAgEAEMQBBI=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OracleConnectETLParser1.Form1" Collapsed="true">
+    <Position X="16" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAACAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Form1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OracleConnectETLParser1.Program" Collapsed="true">
+    <Position X="21.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OracleConnectETLParser1.Controllers.DbConnector" Collapsed="true">
+    <Position X="14.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAIAAAAAAAAAAAAAAAAQAAACAAIA=</HashCode>
+      <FileName>Controllers\Db_connector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OracleConnectETLParser1.Controllers.Manager" Collapsed="true">
+    <Position X="17.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAACABBAAQAAAAAAAAFAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\Manager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OracleConnectETLParser1.DataSet1TableAdapters.A_TABLE1TableAdapter" Collapsed="true">
+    <Position X="14.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACAICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OracleConnectETLParser1.DataSet1TableAdapters.A_TABLE2TableAdapter" Collapsed="true">
+    <Position X="16" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACAICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OracleConnectETLParser1.DataSet1TableAdapters.A_TABLE3TableAdapter" Collapsed="true">
+    <Position X="17.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACAICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OracleConnectETLParser1.DataSet1TableAdapters.MOB_DOK_ZAKTableAdapter" Collapsed="true">
+    <Position X="21.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OracleConnectETLParser1.DataSet1TableAdapters.MOB_DOK_ZAK_2TableAdapter" Collapsed="true">
+    <Position X="19.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACAICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OracleConnectETLParser1.DataSet1TableAdapters.ODMS_TYP_DOKUMENTUTableAdapter" Collapsed="true">
+    <Position X="14.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACAICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OracleConnectETLParser1.DataSet1TableAdapters.POMTableAdapter" Collapsed="true">
+    <Position X="19.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACAICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OracleConnectETLParser1.DataSet1TableAdapters.POM2TableAdapter" Collapsed="true">
+    <Position X="17.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACAICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OracleConnectETLParser1.DataSet1TableAdapters.POM23TableAdapter" Collapsed="true">
+    <Position X="16" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACAICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OracleConnectETLParser1.DataSet1TableAdapters.TAB1TableAdapter" Collapsed="true">
+    <Position X="21.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACAICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OracleConnectETLParser1.DataSet1TableAdapters.XXXXXTableAdapter" Collapsed="true">
+    <Position X="21.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACAICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OracleConnectETLParser1.DataSet1TableAdapters.VIEW1TableAdapter" Collapsed="true">
+    <Position X="16" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EACAAGAAEAAAAAcAIAAAAAAAACAICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OracleConnectETLParser1.DataSet1TableAdapters.VIEW2TableAdapter" Collapsed="true">
+    <Position X="17.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EACAAGAAEAAAAAcAIAAAAAAAACAICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OracleConnectETLParser1.DataSet1TableAdapters.VIEW3TableAdapter" Collapsed="true">
+    <Position X="19.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EACAAGAAEAAAAAcAIAAAAAAAACAICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OracleConnectETLParser1.DataSet1TableAdapters.QueriesTableAdapter" Collapsed="true">
+    <Position X="14.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACCAAAAAAAAAIAAAAAAAEAAIAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OracleConnectETLParser1.DataSet1TableAdapters.TableAdapterManager" Collapsed="true">
+    <Position X="14.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAKgAYCDIBQERAAEAMAAgQAACwICAAAQCAgSABAU=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OracleConnectETLParser1.Objects.DbObject">
+    <Position X="6" Y="0.5" Width="2.75" />
+    <Members>
+      <Property Name="Cardinality" Hidden="true" />
+      <Property Name="Columns" Hidden="true" />
+      <Property Name="Level" Hidden="true" />
+      <Property Name="Name" Hidden="true" />
+      <Property Name="ReferencedNames" Hidden="true" />
+      <Property Name="ReferencedObjects" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAABAAAAAARCAAAAAAIBBAAAAAgAAAA=</HashCode>
+      <FileName>Objects\DBObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OracleConnectETLParser1.Objects.Function">
+    <Position X="11.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Objects\Function.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OracleConnectETLParser1.Objects.Procedure">
+    <Position X="0.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Objects\Procedure.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OracleConnectETLParser1.Objects.Sequence">
+    <Position X="2.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Objects\Sequence.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OracleConnectETLParser1.Objects.Table">
+    <Position X="5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Objects\Table.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OracleConnectETLParser1.Objects.Trigger">
+    <Position X="7.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Objects\Trigger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OracleConnectETLParser1.Objects.View">
+    <Position X="9.25" Y="5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAABABQAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Objects\View.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OracleConnectETLParser1.Properties.Resources" Collapsed="true">
+    <Position X="16" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OracleConnectETLParser1.Properties.Settings" Collapsed="true">
+    <Position X="19.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAgAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OracleConnectETLParser1.Settings.Selects" Collapsed="true">
+    <Position X="17.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAgAAAAAAAAAAAAAAAAAAAAIAAAAAAAgAAAAIAAAA=</HashCode>
+      <FileName>Settings\Selects.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

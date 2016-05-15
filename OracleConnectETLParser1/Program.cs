@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Drawing.Printing;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Oracle.ManagedDataAccess.Client;
-using OracleConnectETLParser1.db_operation;
+using OracleConnectETLParser1.Controllers;
 
 namespace OracleConnectETLParser1
 {
@@ -23,7 +17,7 @@ namespace OracleConnectETLParser1
            // Application.Run(new Form1());
             Console.WriteLine("xxxxxxxxxxxxxxxxxxxxxxxxxx");           
             Manager test=new Manager();
-            test.createDB_Objects();
+            test.CreateDB_Objects();
             Console.ReadKey();
         }
     }

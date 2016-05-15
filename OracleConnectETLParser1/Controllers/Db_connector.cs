@@ -1,27 +1,18 @@
-﻿using Oracle.ManagedDataAccess.Client;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Configuration;
+﻿using System;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using Oracle.ManagedDataAccess.Client;
 
-namespace OracleConnectETLParser1.db_operation
+namespace OracleConnectETLParser1.Controllers
 {
     public class DbConnector
     {
+<<<<<<< HEAD:OracleConnectETLParser1/db_operation/Db_connector.cs
         public OracleConnection OraConnection = new OracleConnection(@"Data Source=localhost:1521/xe; User ID=liesko; Password=trileptal");
         public string DbOwner = "LIESKO";
+=======
+        public OracleConnection OraConnection = new OracleConnection(@"Data Source=localhost:1521/xe; User ID=ivka; Password=11591951");
+        public string DbOwner = "IVKA";
+>>>>>>> cac8aa3d456abbec905cc8a0a097da1db75f1ee0:OracleConnectETLParser1/Controllers/Db_connector.cs
 
         public void Open()
         {
