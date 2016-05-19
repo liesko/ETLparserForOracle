@@ -8,7 +8,7 @@ namespace OracleConnectETLParser1.Objects
 {
     public class Trigger : DbObject
     {
-        public Trigger(string name) : base(name)
+        public Trigger(string name, string owner) : base(name, owner)
         {
         }
     }

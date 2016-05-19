@@ -2,7 +2,7 @@
 {
     public class Function : DbObject
     {
-        public Function(string name) : base(name)
+        public Function(string name, string owner) : base(name, owner)
         {
         }
     }

@@ -29,25 +29,25 @@ namespace OracleConnectETLParser1.Controllers
                 switch (type)
                 {
                     case ("VIEW"):
-                        ListOfObjects.Add(new View(dr.GetString(0)));
+                        ListOfObjects.Add(new View(dr.GetString(0), dr.GetString(2)));
                         break;
                     case ("TABLE"):
-                        ListOfObjects.Add(new Table(dr.GetString(0)));
+                        ListOfObjects.Add(new Table(dr.GetString(0), dr.GetString(2)));
                         break;
                     case ("MATERIALIZED VIEW"):
-                        ListOfObjects.Add(new View(dr.GetString(0), true));
+                        ListOfObjects.Add(new View(dr.GetString(0), dr.GetString(2), true));
                         break;
                     case ("PROCEDURE"):
-                        ListOfObjects.Add(new Procedure(dr.GetString(0)));
+                        ListOfObjects.Add(new Procedure(dr.GetString(0), dr.GetString(2)));
                         break;
                     case ("FUNCTION"):
-                        ListOfObjects.Add(new Function(dr.GetString(0)));
+                        ListOfObjects.Add(new Function(dr.GetString(0), dr.GetString(2)));
                         break;
                     case ("TRIGGER"):
-                        ListOfObjects.Add(new Trigger(dr.GetString(0)));
+                        ListOfObjects.Add(new Trigger(dr.GetString(0), dr.GetString(2)));
                         break;
                     case ("SEQUENCE"):
-                        ListOfObjects.Add(new Sequence(dr.GetString(0)));
+                        ListOfObjects.Add(new Sequence(dr.GetString(0), dr.GetString(2)));
                         break;
                 }
 
