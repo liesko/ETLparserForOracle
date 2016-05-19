@@ -18,7 +18,7 @@ namespace OracleConnectETLParser1.Controllers
             db.Open();
             OracleCommand oraCmd = new OracleCommand();
             oraCmd.Connection = db.OraConnection;
-            oraCmd.CommandText = "select object_name, object_type from ALL_OBJECTS WHERE Owner ='"+db.DbOwner+"'";
+            oraCmd.CommandText = "select object_name, object_type, owner from ALL_OBJECTS WHERE Owner ='"+db.DbOwner+"'";
             OracleDataReader dr = oraCmd.ExecuteReader();
             ListOfObjects = new List<DbObject>();
             while (dr.Read())
@@ -29,25 +29,25 @@ namespace OracleConnectETLParser1.Controllers
                 switch (type)
                 {
                     case ("VIEW"):
-                        ListOfObjects.Add(new View(dr.GetString(0)));
+                        ListOfObjects.Add(new View(dr.GetString(0), dr.GetString(2)));
                         break;
                     case ("TABLE"):
-                        ListOfObjects.Add(new Table(dr.GetString(0)));
+                        ListOfObjects.Add(new Table(dr.GetString(0), dr.GetString(2)));
                         break;
                     case ("MATERIALIZED VIEW"):
-                        ListOfObjects.Add(new View(dr.GetString(0), true));
+                        ListOfObjects.Add(new View(dr.GetString(0), dr.GetString(2), true));
                         break;
                     case ("PROCEDURE"):
-                        ListOfObjects.Add(new Procedure(dr.GetString(0)));
+                        ListOfObjects.Add(new Procedure(dr.GetString(0), dr.GetString(2)));
                         break;
                     case ("FUNCTION"):
-                        ListOfObjects.Add(new Function(dr.GetString(0)));
+                        ListOfObjects.Add(new Function(dr.GetString(0), dr.GetString(2)));
                         break;
                     case ("TRIGGER"):
-                        ListOfObjects.Add(new Trigger(dr.GetString(0)));
+                        ListOfObjects.Add(new Trigger(dr.GetString(0), dr.GetString(2)));
                         break;
                     case ("SEQUENCE"):
-                        ListOfObjects.Add(new Sequence(dr.GetString(0)));
+                        ListOfObjects.Add(new Sequence(dr.GetString(0), dr.GetString(2)));
                         break;
                 }
 

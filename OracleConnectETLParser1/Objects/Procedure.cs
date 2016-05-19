@@ -2,7 +2,7 @@
 {
     class Procedure : DbObject
     {
-        public Procedure(string name) : base(name)
+        public Procedure(string name, string owner) : base(name, owner)
         {
         }
     }

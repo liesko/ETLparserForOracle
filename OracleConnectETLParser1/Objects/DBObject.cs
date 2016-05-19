@@ -12,11 +12,14 @@ namespace OracleConnectETLParser1.Objects
         public List<DbObject> ReferencedObjects { get; set; } 
         public List<Column> Columns { get; protected set; }     
         public int Level { get; set; } 
-        public int Cardinality { get; protected set; }     
+        public int Cardinality { get; protected set; }  
+        
+        public string Owner { get; private set; }   
 
-        public DbObject(string name)
+        public DbObject(string name, string owner)
         {
             Name = name;
+            Owner = owner;
             ReferencedNames = new List<string>();
             ReferencedObjects = new List<DbObject>();
             Columns = new List<Column>();
