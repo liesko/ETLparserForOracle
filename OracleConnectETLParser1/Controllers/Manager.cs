@@ -18,7 +18,7 @@ namespace OracleConnectETLParser1.Controllers
             db.Open();
             OracleCommand oraCmd = new OracleCommand();
             oraCmd.Connection = db.OraConnection;
-            oraCmd.CommandText = "select object_name, object_type from ALL_OBJECTS WHERE Owner ='"+db.DbOwner+"'";
+            oraCmd.CommandText = "select object_name, object_type, owner from ALL_OBJECTS WHERE Owner ='"+db.DbOwner+"'";
             OracleDataReader dr = oraCmd.ExecuteReader();
             ListOfObjects = new List<DbObject>();
             while (dr.Read())
