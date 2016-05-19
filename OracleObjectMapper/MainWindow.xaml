@@ -6,5 +6,6 @@
         xmlns:local="clr-namespace:OracleObjectMapper"
         mc:Ignorable="d"
         Title="MainWindow" Height="509.848" Width="729.758">
-    <Grid/>
+    <Grid>>
+    </Grid>
 </Window>
