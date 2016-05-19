@@ -2,7 +2,7 @@
 {
     public class Sequence : DbObject
     {
-        public Sequence(string name) : base(name)
+        public Sequence(string name, string owner) : base(name, owner)
         {
         }
     }
