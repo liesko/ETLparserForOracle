@@ -1,8 +1,10 @@
-﻿namespace OracleConnectETLParser1.Objects
+﻿using OracleConnectETLParser1.Controllers;
+
+namespace OracleConnectETLParser1.Objects
 {
     public class Function : DbObject
     {
-        public Function(string name, string owner) : base(name, owner)
+        public Function(string name, string owner, DbConnector db) : base(name, owner, db)
         {
         }
     }

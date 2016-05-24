@@ -8,26 +8,24 @@ namespace OracleConnectETLParser1.Objects
     public class View : DbObject
     {
         private bool IsMaterialized;
-        public View(string name, string owner) : base(name, owner)
+        public View(string name, string owner, DbConnector db) : base(name, owner, db)
         {
             Columns = new List<Column>();
-            AddColumns();
-            AddCardinality();
+            AddColumns(db);
+            AddCardinality(db);
         }
 
-        public View(string name, string owner, bool isMaterialized) : base(name, owner)
+        public View(string name, string owner, DbConnector db, bool isMaterialized) : base(name, owner, db)
         {
             Columns = new List<Column>();
-            AddColumns();
-            AddCardinality();
+            AddColumns(db);
+            AddCardinality(db);
             IsMaterialized = isMaterialized;
         }
 
-        public void AddColumns()
+        public void AddColumns(DbConnector db)
         {
-            DbConnector db = new DbConnector();
-            db.Open();
-
+           // db.Open();
             OracleCommand oraCmd = new OracleCommand
             {
                 Connection = db.OraConnection,
@@ -42,14 +40,13 @@ namespace OracleConnectETLParser1.Objects
                 var newColumn = new Column(dr.GetString(0), dr.GetString(1), isNullable);
                 Columns.Add(newColumn);
             }
-            db.Close();
+           // db.Close();
         }
 
-        private void AddCardinality()
+        private void AddCardinality(DbConnector db)
         {
             int value = 0;
-            DbConnector db = new DbConnector();
-            db.Open();
+           // db.Open();
             OracleCommand oraCmd = new OracleCommand
             {
                 Connection = db.OraConnection,
@@ -60,7 +57,7 @@ namespace OracleConnectETLParser1.Objects
             {
                 value = dr.GetInt32(0);
             }
-            db.Close();
+          //  db.Close();
             Cardinality = value;
         }
     }

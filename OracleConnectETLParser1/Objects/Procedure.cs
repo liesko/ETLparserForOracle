@@ -1,8 +1,10 @@
-﻿namespace OracleConnectETLParser1.Objects
+﻿using OracleConnectETLParser1.Controllers;
+
+namespace OracleConnectETLParser1.Objects
 {
     class Procedure : DbObject
     {
-        public Procedure(string name, string owner) : base(name, owner)
+        public Procedure(string name, string owner, DbConnector db ) : base(name, owner, db)
         {
         }
     }

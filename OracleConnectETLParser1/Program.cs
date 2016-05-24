@@ -14,10 +14,11 @@ namespace OracleConnectETLParser1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-           // Application.Run(new Form1());
-            Console.WriteLine("xxxxxxxxxxxxxxxxxxxxxxxxxx");           
+            //Application.Run(new Form1());    
+            DbConnector db = new DbConnector("Oracle");
             Manager test=new Manager();
-            test.CreateDB_Objects();
+            test.CreateDB_Objects(db);
+            Console.WriteLine("xxxxxxxxxxxxxxxxxxxxxxxxxx");
             Console.ReadKey();
         }
     }

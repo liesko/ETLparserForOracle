@@ -16,20 +16,19 @@ namespace OracleConnectETLParser1.Objects
         
         public string Owner { get; private set; }   
 
-        public DbObject(string name, string owner)
+        public DbObject(string name, string owner, DbConnector db)
         {
             Name = name;
             Owner = owner;
             ReferencedNames = new List<string>();
             ReferencedObjects = new List<DbObject>();
-            AddReferenceObjects();
-            AddBaseLevel();
+            AddReferenceObjects(db);
+            AddBaseLevel(db);
         }
 
-        public void AddBaseLevel()
+        public void AddBaseLevel(DbConnector db)
         {
-            DbConnector db = new DbConnector();
-            db.Open();
+            //db.Open();
             OracleCommand oraCmd = new OracleCommand
             {
                 Connection = db.OraConnection,
@@ -51,13 +50,12 @@ namespace OracleConnectETLParser1.Objects
             {
                 Level = -1;
             }
-            db.Close();
+           // db.Close();
         }
 
-        private void AddReferenceObjects()
+        private void AddReferenceObjects(DbConnector db)
         {
-            DbConnector db = new DbConnector();
-            db.Open();
+           // db.Open();
             OracleCommand oraCmd = new OracleCommand
             {
                 Connection = db.OraConnection,
@@ -72,7 +70,7 @@ namespace OracleConnectETLParser1.Objects
             {
                 ReferencedNames.Add(dr.GetString(0));
             }
-            db.Close();
+          //  db.Close();
         }
     }
 }
