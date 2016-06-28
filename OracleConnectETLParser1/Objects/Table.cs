@@ -7,7 +7,7 @@ namespace OracleConnectETLParser1.Objects
 {
     public class Table : DbObject
     {
-        public Table(string name, string owner, DbConnector db): base(name, owner, db)
+        public Table(string name, string owner, DbConnector db, DbObjectType DbObjectTypeName) : base(name, owner, db, DbObjectTypeName)
         {
             Columns = new List<Column>();
             AddColumns(db);

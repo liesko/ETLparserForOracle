@@ -17,40 +17,38 @@ namespace OracleConnectETLParser1.Controllers
             db.Open();
             OracleCommand oraCmd = new OracleCommand();
             oraCmd.Connection = db.OraConnection;
-            //oraCmd.CommandText = "select object_name, object_type, owner from ALL_OBJECTS WHERE Owner ='"+db.DbOwner+"'";
             oraCmd.CommandText = Settings.Selects.SelectObjects + db.DbOwner + "'";
             OracleDataReader dr = oraCmd.ExecuteReader();
             ListOfObjects = new List<DbObject>();
             while (dr.Read())
             {
                 // name, type from all objects
-                //ListOfObjects.Add(new DbObject(dr.GetString(0), dr.GetString(1)));
+                // ListOfObjects.Add(new DbObject(dr.GetString(0), dr.GetString(1)));
                 string type = dr.GetString(1);
                 switch (type)
                 {
                     case ("VIEW"):
-                        ListOfObjects.Add(new View(dr.GetString(0), dr.GetString(2),db));
+                        ListOfObjects.Add(new View(dr.GetString(0), dr.GetString(2),db, DbObjectType.View));
                         break;
                     case ("TABLE"):
-                        ListOfObjects.Add(new Table(dr.GetString(0), dr.GetString(2), db));
+                        ListOfObjects.Add(new Table(dr.GetString(0), dr.GetString(2), db, DbObjectType.Table));
                         break;
                     case ("MATERIALIZED VIEW"):
-                        ListOfObjects.Add(new View(dr.GetString(0), dr.GetString(2), db, true));
+                        ListOfObjects.Add(new View(dr.GetString(0), dr.GetString(2), db, true, DbObjectType.MaterializedView));
                         break;
                     case ("PROCEDURE"):
-                        ListOfObjects.Add(new Procedure(dr.GetString(0), dr.GetString(2),db));
+                        ListOfObjects.Add(new Procedure(dr.GetString(0), dr.GetString(2),db, DbObjectType.Procedure));
                         break;
                     case ("FUNCTION"):
-                        ListOfObjects.Add(new Function(dr.GetString(0), dr.GetString(2), db));
+                        ListOfObjects.Add(new Function(dr.GetString(0), dr.GetString(2), db, DbObjectType.Function));
                         break;
                     case ("TRIGGER"):
-                        ListOfObjects.Add(new Trigger(dr.GetString(0), dr.GetString(2), db));
+                        ListOfObjects.Add(new Trigger(dr.GetString(0), dr.GetString(2), db, DbObjectType.Trigger));
                         break;
                     case ("SEQUENCE"):
-                        ListOfObjects.Add(new Sequence(dr.GetString(0), dr.GetString(2), db));
+                        ListOfObjects.Add(new Sequence(dr.GetString(0), dr.GetString(2), db, DbObjectType.Sequence));
                         break;
                 }
-
             }
             // some cycle will be necessary here - later
             SetNextLevel(2);

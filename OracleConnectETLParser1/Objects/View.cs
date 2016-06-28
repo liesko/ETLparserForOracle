@@ -8,14 +8,14 @@ namespace OracleConnectETLParser1.Objects
     public class View : DbObject
     {
         private bool IsMaterialized;
-        public View(string name, string owner, DbConnector db) : base(name, owner, db)
+        public View(string name, string owner, DbConnector db, DbObjectType DbObjectTypeName) : base(name, owner, db, DbObjectTypeName)
         {
             Columns = new List<Column>();
             AddColumns(db);
             AddCardinality(db);
         }
 
-        public View(string name, string owner, DbConnector db, bool isMaterialized) : base(name, owner, db)
+        public View(string name, string owner, DbConnector db, bool isMaterialized, DbObjectType DbObjectTypeName) : base(name, owner, db, DbObjectTypeName)
         {
             Columns = new List<Column>();
             AddColumns(db);

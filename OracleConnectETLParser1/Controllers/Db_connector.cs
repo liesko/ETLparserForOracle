@@ -9,12 +9,14 @@ namespace OracleConnectETLParser1.Controllers
     {
 
         /*
-         * Oracle, MSSQL
+         * Oracle
+         * MSSQL
          */
         public string DatabaseType{ get; private set; }
-        public OracleConnection OraConnection = new OracleConnection(@"Data Source=localhost:1521/xe; User ID=liesko; Password=potter");
+        //public OracleConnection OraConnection = new OracleConnection(@"Data Source=localhost:1521/xe; User ID=liesko; Password=potter");
+        public OracleConnection OraConnection = new OracleConnection(@"Data Source=localhost:1521/xe; User ID=DOD_DB; Password=potter");
         public SqlConnection SqlConnection= new SqlConnection(@"Data Source = SK1A991C; Initial Catalog = master; Integrated Security = True");
-        public string DbOwner = "LIESKO";
+        public string DbOwner = "DOD_DB";
 
         public DbConnector(string databaseType)
         {
@@ -52,7 +54,7 @@ namespace OracleConnectETLParser1.Controllers
                 case "MSSQL":
                     if (SqlConnection.State == ConnectionState.Open)
                     {
-                        SqlConnection.Open();
+                        SqlConnection.Close();
                     }
                     break;
             }

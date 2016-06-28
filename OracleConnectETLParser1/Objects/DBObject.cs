@@ -5,21 +5,34 @@ using OracleConnectETLParser1.Settings;
 
 namespace OracleConnectETLParser1.Objects
 {
-    public class DbObject
+    public enum DbObjectType
     {
+        View,
+        MaterializedView,
+        Table,
+        Trigger,
+        Procedure,
+        Function,
+        Sequence,
+        Unknown
+    };
+    public class DbObject
+    {  
         public string Name { get; private set; }
         public List<string> ReferencedNames { get; set; }  
         public List<DbObject> ReferencedObjects { get; set; } 
         public List<Column> Columns { get; protected set; }     
         public int Level { get; set; } 
         public int Cardinality { get; protected set; }  
-        
-        public string Owner { get; private set; }   
+        public string Owner { get; private set; }
+        public  DbObjectType DbObjectTypeName { get; private set; }        
 
-        public DbObject(string name, string owner, DbConnector db)
+        public DbObject(string name, string owner, DbConnector db, 
+            DbObjectType paramDbObjectTypeName = DbObjectType.Unknown)
         {
             Name = name;
             Owner = owner;
+            DbObjectTypeName = paramDbObjectTypeName;
             ReferencedNames = new List<string>();
             ReferencedObjects = new List<DbObject>();
             AddReferenceObjects(db);

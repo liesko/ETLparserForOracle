@@ -16,6 +16,7 @@ namespace OracleConnectETLParser1
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Form1());    
             DbConnector db = new DbConnector("Oracle");
+            //DbConnector db = new DbConnector("MSSQL");
             Manager test=new Manager();
             test.CreateDB_Objects(db);
             Console.WriteLine("xxxxxxxxxxxxxxxxxxxxxxxxxx");
