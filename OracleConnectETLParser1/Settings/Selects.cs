@@ -17,7 +17,7 @@ namespace OracleConnectETLParser1.Settings
          */
 
         // select all objects
-        public const string SelectObjects = "select object_name, object_type, owner from ALL_OBJECTS WHERE Owner ='";
+        public const string SelectObjects = "select object_name, object_type, owner, to_char(OBJECT_ID), to_char(CREATED), to_char(LAST_DDL_TIME) from ALL_OBJECTS WHERE Owner ='";
         public const string SelectObjectsMSSQL = "with objects_cte as(" +
                                                  "select" +
                                                  "o.name," +
@@ -68,5 +68,27 @@ namespace OracleConnectETLParser1.Settings
         public const string SelectReferencedMSSQL = "SELECT a.referenced_entity_name as name " +
                                                     "FROM sys.sql_expression_dependencies a join sys.all_objects b on(a.referencing_id=b.object_id) " +
                                                     "where b.name='";
+
+        // select for DDL of Object 
+        public static string SelectObjectDDL(string owner, string object_name, string object_type)
+        {
+            return "select dbms_metadata.get_ddl(object_type, object_name, owner) " +
+                   "from " +
+                   "(select owner, object_name, object_type from dba_objects " +
+                   "where 1 = 1 and OBJECT_TYPE = '"+object_type+"' and owner = '" + owner+ "' and object_name = '"+object_name+"')";
+        }
+
+        // select comments for View or Table
+        public static string SelectTableOrViewComment(string owner, string object_name)
+        {
+            return "select comments from all_tab_comments where TABLE_NAME='"+ object_name + "' and OWNER='"+owner+"'";
+        }
+
+        // select comments for columns, OWNER, TABLE_NAME, COLUMN_NAME
+        public static string SelectColumnsComment(string owner, string object_name, string column_name)
+        {
+            return "SELECT comments FROM dba_col_comments where TABLE_NAME='"+ object_name + "' and OWNER='"+owner+"'"+ " and COLUMN_NAME='"+column_name+"'";
+        }
+
     }
 }

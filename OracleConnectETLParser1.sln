@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OracleConnectETLParser1", "OracleConnectETLParser1\OracleConnectETLParser1.csproj", "{94E77F11-8C6A-4C71-AA76-CCA4332ABD68}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OracleObjectMapper", "OracleObjectMapper\OracleObjectMapper.csproj", "{78695F49-A865-40ED-A771-5DF0882104D3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tester", "Tester\Tester.csproj", "{86A5DE16-E335-4827-9314-F7400031A727}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{94E77F11-8C6A-4C71-AA76-CCA4332ABD68}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{94E77F11-8C6A-4C71-AA76-CCA4332ABD68}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{94E77F11-8C6A-4C71-AA76-CCA4332ABD68}.Release|Any CPU.Build.0 = Release|Any CPU
-		{78695F49-A865-40ED-A771-5DF0882104D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{78695F49-A865-40ED-A771-5DF0882104D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{78695F49-A865-40ED-A771-5DF0882104D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{78695F49-A865-40ED-A771-5DF0882104D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86A5DE16-E335-4827-9314-F7400031A727}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86A5DE16-E335-4827-9314-F7400031A727}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86A5DE16-E335-4827-9314-F7400031A727}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86A5DE16-E335-4827-9314-F7400031A727}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

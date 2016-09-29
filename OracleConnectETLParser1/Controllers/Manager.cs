@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Oracle.ManagedDataAccess.Client;
 using OracleConnectETLParser1.Objects;
 
@@ -7,17 +8,29 @@ namespace OracleConnectETLParser1.Controllers
     public class Manager
     {
         public List<DbObject> ListOfObjects;                   // MAIN list of DbObjects
-        public List<DbObject> RelateDbObjects;                 // list of related objects - this list is filled by listOfRelatedObjects method
+       // public List<DbObject> RelateDbObjects;                 // list of related objects - this list is filled by listOfRelatedObjects method
+        public DbConnector Db;
+        public String DbConnectionName;
         /*
-         * Creation of List<DB_object> - all DB objects transformed into Object: DB_Object
-         * Objects are stored in List.
-         */
-        public void CreateDB_Objects(DbConnector db)
+        * Creation of List<DB_object> - all DB objects transformed into Object: DB_Object
+        * Objects are stored in List.
+        */
+
+        public Manager(DbConnector db)
         {
-            db.Open();
+            this.Db = db;
+            this.DbConnectionName = db.ConnectionName;
+            this.ListOfObjects = null;
+            //this.RelateDbObjects = null;
+            CreateDB_Objects();
+        }
+
+        public void CreateDB_Objects()
+        {
+            this.Db.Open();
             OracleCommand oraCmd = new OracleCommand();
-            oraCmd.Connection = db.OraConnection;
-            oraCmd.CommandText = Settings.Selects.SelectObjects + db.DbOwner + "'";
+            oraCmd.Connection = this.Db.OraConnection;
+            oraCmd.CommandText = Settings.Selects.SelectObjects + Db.DbOwner + "'";
             OracleDataReader dr = oraCmd.ExecuteReader();
             ListOfObjects = new List<DbObject>();
             while (dr.Read())
@@ -28,25 +41,25 @@ namespace OracleConnectETLParser1.Controllers
                 switch (type)
                 {
                     case ("VIEW"):
-                        ListOfObjects.Add(new View(dr.GetString(0), dr.GetString(2),db, DbObjectType.View));
+                        ListOfObjects.Add(new View(dr.GetString(0), dr.GetString(2),Db, dr.GetString(3), dr.GetString(4), dr.GetString(5), DbObjectType.VIEW));
                         break;
                     case ("TABLE"):
-                        ListOfObjects.Add(new Table(dr.GetString(0), dr.GetString(2), db, DbObjectType.Table));
+                        ListOfObjects.Add(new Table(dr.GetString(0), dr.GetString(2), this.Db, dr.GetString(3), dr.GetString(4), dr.GetString(5), DbObjectType.TABLE));
                         break;
                     case ("MATERIALIZED VIEW"):
-                        ListOfObjects.Add(new View(dr.GetString(0), dr.GetString(2), db, true, DbObjectType.MaterializedView));
+                        ListOfObjects.Add(new View(dr.GetString(0), dr.GetString(2), this.Db, true, dr.GetString(3), dr.GetString(4), dr.GetString(5), DbObjectType.MATERIALIZEDVIEW));
                         break;
                     case ("PROCEDURE"):
-                        ListOfObjects.Add(new Procedure(dr.GetString(0), dr.GetString(2),db, DbObjectType.Procedure));
+                        ListOfObjects.Add(new Procedure(dr.GetString(0), dr.GetString(2), this.Db, dr.GetString(3), dr.GetString(4), dr.GetString(5), DbObjectType.PROCEDURE));
                         break;
                     case ("FUNCTION"):
-                        ListOfObjects.Add(new Function(dr.GetString(0), dr.GetString(2), db, DbObjectType.Function));
+                        ListOfObjects.Add(new Function(dr.GetString(0), dr.GetString(2), this.Db, dr.GetString(3), dr.GetString(4), dr.GetString(5),DbObjectType.FUNCTION));
                         break;
                     case ("TRIGGER"):
-                        ListOfObjects.Add(new Trigger(dr.GetString(0), dr.GetString(2), db, DbObjectType.Trigger));
+                        ListOfObjects.Add(new Trigger(dr.GetString(0), dr.GetString(2), this.Db, dr.GetString(3), dr.GetString(4), dr.GetString(5), DbObjectType.TRIGGGER));
                         break;
                     case ("SEQUENCE"):
-                        ListOfObjects.Add(new Sequence(dr.GetString(0), dr.GetString(2), db, DbObjectType.Sequence));
+                        ListOfObjects.Add(new Sequence(dr.GetString(0), dr.GetString(2), this.Db, dr.GetString(3), dr.GetString(4), dr.GetString(5), DbObjectType.SEQUENCE));
                         break;
                 }
             }
@@ -55,7 +68,7 @@ namespace OracleConnectETLParser1.Controllers
             SetNextLevel(3);
             // - END cycle
             SetListOfRelatedObjects();
-            db.Close();
+            this.Db.Close();
         }
         /*
          * Quite complicated method for DbObjects level setting.
@@ -64,11 +77,11 @@ namespace OracleConnectETLParser1.Controllers
         {
             for (int i = 0; i < ListOfObjects.Count; i++)                                   // all objects
             {
-                if (ListOfObjects[i].Level==-1)                                        // ==-1 (only unleveled DbObjects expected)
+                if (ListOfObjects[i].Level==-1)                                             // ==-1 (only unleveled DbObjects expected)
                 {
-                    for (int j = 0; j < ListOfObjects[i].ReferencedNames.Count; j++)       // reference objects for previous object
+                    for (int j = 0; j < ListOfObjects[i].ReferencedNames.Count; j++)        // reference objects for previous object
                     {
-                    if (GetDbObjectLevel(ListOfObjects[i].ReferencedNames[j])<newLevel)    // checking if referenced object had less level than main object
+                    if (GetDbObjectLevel(ListOfObjects[i].ReferencedNames[j])<newLevel)     // checking if referenced object had less level than main object
                         {
                             ListOfObjects[i].Level = newLevel;
                         }
